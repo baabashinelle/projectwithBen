@@ -3,7 +3,7 @@
 <!-- general form elements -->
 <div class="box box-primary">
   <!-- form start -->
-  <form role="form" method="POST">
+  <form role="form" method="POST" autocomplete="off">
     <div class="box-head">
     <?php new_user(); ?>
     </div>
