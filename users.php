@@ -11,19 +11,22 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
-<?php echo page_nav("NEW USER") ?>
+<?php ?>
 <!-- Tabs -->
 <?php 
 
     if(isset($_GET['ref']) && $_GET['ref'] == "new")
     {
+        echo page_nav("NEW USER");
         require_once "./components/new_user.php" ;
-    }else{
-        echo "TODO";
+      }else{
+        echo page_nav("ALL USERS  ");
+       require_once "./components/users.php" ;
     }
 
 ?>
 </div>
 
 <?php require_once "./components/footer.php" ?>
+
 
