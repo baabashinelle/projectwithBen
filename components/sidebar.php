@@ -26,7 +26,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="#">
+          <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -39,8 +39,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-plus"></i> Add Users</a></li>
-            <li><a href="#"><i class="fa fa-eye"></i> View Users</a></li>
+            <li><a href="users.php?ref=new"><i class="fa fa-plus"></i> Add Users</a></li>
+            <li><a href="users.php"><i class="fa fa-eye"></i> View Users</a></li>
           </ul>
         </li>
         <li class="treeview">
