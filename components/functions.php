@@ -1,23 +1,24 @@
 <?php 
 
+
 function new_user()
 {
     if(isset($_POST['btn_add_user']))
     {        
+        $opr = new DBOperation();
         $name = strip_tags(htmlspecialchars($_POST['name']));
         $phone = strip_tags(htmlspecialchars($_POST['phone']));
         $email = strip_tags(htmlspecialchars($_POST['email']));
         $password = "12345";
         $user_type = strip_tags(htmlspecialchars($_POST['user_type']));
         $formError = true;
-        $opr = new DBOperation();
         $result = $opr->addUser($name, $email, $phone, $password, $user_type);
         if($result == "USER_ADDED_SUCCESSFULLY")
         {
-            $msg = "User added successfuly.";
+            $msg = "User <i><b>'$name'</b></i> added successfuly.";
             $formError = false;
         }elseif ($result == "USER_ALREADY_EXIST") {
-            $msg = "This users is already in our records.";
+            $msg = "User with email <i><b>'$email'</b></i> is already in our records.";
             $formError = true;
         }else{
             $msg = "Unknown error occured, Please try again later.";
@@ -25,6 +26,33 @@ function new_user()
         }
         echo alert_box($formError, $msg, $result);
 
+    }
+}
+
+function get_user()
+{
+    $opr = new DBOperation();
+    $result = $opr->getAllRecord("users");
+    if($result != "NO_DATA")
+    {
+        foreach ($result as $user) {
+            // $uty;
+            echo"
+            <tr>
+                <td>".$user['id']."</td>
+                <td>".$user['name']."</td>
+                <td>".$user['email']."</td>
+                <td> ".$user['phone']."</td>
+                <td>".$opr->singlerecord("utypes", $user['user_type'], "id")['name']."</td>
+            </tr>
+            ";
+        }
+    }else{
+        echo "
+        <tr>
+            <td colspan ='5'>No Records found</td>
+        </tr>
+        ";
     }
 }
 function alert_box($isError, $msg, $title_msg = null)
