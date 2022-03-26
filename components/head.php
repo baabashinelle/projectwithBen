@@ -37,3 +37,9 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+
+<!-- GLobal functions -->
+<?php   
+  require_once "./components/functions.php";  
+  require_once "./Config/database/DBOperation.php";
+?>

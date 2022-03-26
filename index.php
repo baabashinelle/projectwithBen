@@ -1,7 +1,5 @@
 <?php 
-  require_once "./components/functions.php";
   require_once "./components/head.php" 
-
 ?>
 
 <?php require_once "./components/navbar.php" ?>
