@@ -44,11 +44,35 @@
 <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- DataTables -->
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
+<!-- init dtb -->
+<script>
+
+  // This function is to control the behaviour of the datatables.
+  $(function () {
+    // $('#example1').DataTable()  //This is the simplified way of initializing datatables with all properties set to TRUE
+    $('#example1').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : true,
+      "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+      "iDisplayLength": 5
+    })
+  })
+
+  // I used the about to show all the properties of the datatables so you can play along😊  
+</script>
 </body>
 </html>
