@@ -51,8 +51,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-plus"></i> Add Posts</a></li>
-            <li><a href="#"><i class="fa fa-eye"></i> View Posts</a></li>
+            <li><a href="post.php?ref=new"><i class="fa fa-plus"></i> Add Posts</a></li>
+            <li><a href="post.php"><i class="fa fa-eye"></i> View Posts</a></li>
           </ul>
         </li>
         <li class="treeview">
