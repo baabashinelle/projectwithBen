@@ -66,6 +66,13 @@ class DBOperation
 		return "NO_DATA";
 	}
 
+	public function recoordCount($tb)
+	{
+		$pre_stmt = $this->con->prepare("SELECT * FROM ".$tb);
+		$pre_stmt->execute() or die($this->con->error);
+		$result = $pre_stmt->get_result();
+		return $result->num_rows;
+	}
 	public function singlerecord($tb, $val, $key="id")
 	{
 		$stmt = "SELECT * FROM  `$tb` WHERE $key = ? LIMIT 1";
