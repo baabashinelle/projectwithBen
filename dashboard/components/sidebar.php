@@ -64,8 +64,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-plus"></i> Add Tourist Sites</a></li>
-            <li><a href="#"><i class="fa fa-eye"></i> View Tourist Sites</a></li>
+            <li><a href="sites.php?ref=new"><i class="fa fa-plus"></i> Add Tourist Sites</a></li>
+            <li><a href="sites.php"><i class="fa fa-eye"></i> View Tourist Sites</a></li>
           </ul>
         </li>
         <li class="treeview">

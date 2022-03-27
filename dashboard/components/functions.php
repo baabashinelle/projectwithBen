@@ -55,6 +55,34 @@ function get_user()
         ";
     }
 }
+function get_posts()
+{
+
+    $opr = new DBOperation();
+    $result = $opr->getAllRecord("post");
+    if($result != "NO_DATA")
+    {
+        foreach ($result as $post) {
+            // $uty;
+            echo"
+            <tr>
+                <td>".$post['id']."</td>
+                <td>".$post['title']."</td>
+                <td>".$post['content']."</td>
+                <td>".$post['status']."</td>
+                <td> ".$post['date_added']."</td>
+            </tr>
+            ";
+        }
+    }else{
+        echo "
+        <tr>
+            <td colspan ='5'>No Records found</td>
+        </tr>
+        ";
+    }
+
+}
 function alert_box($isError, $msg, $title_msg = null)
 {
     
