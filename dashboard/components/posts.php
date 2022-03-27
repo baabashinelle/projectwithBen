@@ -17,7 +17,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php get_user(); ?>
+                <?php get_posts(); ?>
                 </tbody>
                 <tfoot>
                 <tr>
