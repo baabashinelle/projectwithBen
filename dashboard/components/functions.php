@@ -32,6 +32,33 @@ function new_user()
 function get_user()
 {
     $opr = new DBOperation();
+    $result = $opr->getAllRecord("users");
+    if($result != "NO_DATA")
+    {
+        foreach ($result as $user) {
+            // $uty;
+            echo"
+            <tr>
+                <td>".$user['id']."</td>
+                <td>".$user['name']."</td>
+                <td>".$user['email']."</td>
+                <td> ".$user['phone']."</td>
+                <td>".$opr->singlerecord("utypes", $user['user_type'], "id")['name']."</td>
+            </tr>
+            ";
+        }
+    }else{
+        echo "
+        <tr>
+            <td colspan ='5'>No Records found</td>
+        </tr>
+        ";
+    }
+}
+function get_posts()
+{
+
+    $opr = new DBOperation();
     $result = $opr->getAllRecord("post");
     if($result != "NO_DATA")
     {
@@ -54,6 +81,7 @@ function get_user()
         </tr>
         ";
     }
+
 }
 function alert_box($isError, $msg, $title_msg = null)
 {
