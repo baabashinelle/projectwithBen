@@ -2,18 +2,18 @@
           <!-- /.box -->
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">A list of all user records</h3>
+              <h3 class="box-title">A list of all Post records</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-hover table-striped">
                 <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>User Type</th>
+                    <th>ID</th>
+                  <th>Title</th>
+                  <th>Content</th>
+                  <th>Status</th>
+                  <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -22,10 +22,10 @@
                 <tfoot>
                 <tr>
                   <th>ID</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>User Type</th>
+                  <th>Title</th>
+                  <th>Content</th>
+                  <th>Status</th>
+                  <th>Date</th>
                 </tr>
                 </tfoot>
               </table>
