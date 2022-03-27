@@ -55,6 +55,34 @@ function get_user()
         ";
     }
 }
+function get_sites()
+{
+
+    $opr = new DBOperation();
+    $result = $opr->getAllRecord("site");
+    if($result != "NO_DATA")
+    {
+        foreach ($result as $site) {
+            // $uty;
+            echo"
+            <tr>
+                <td>".$site['id']."</td>
+                <td>".$site['name']."</td>
+                <td>".$site['location']."</td>
+                <td>".$site['about']."</td>
+                <td> ".$site['date']."</td>
+            </tr>
+            ";
+        }
+    }else{
+        echo "
+        <tr>
+            <td colspan ='5'>No Records found</td>
+        </tr>
+        ";
+    }
+
+}
 function get_posts()
 {
 

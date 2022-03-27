@@ -17,7 +17,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php get_posts(); ?>
+                <?php get_sites(); ?>
                 </tbody>
                 <tfoot>
                 <tr>
