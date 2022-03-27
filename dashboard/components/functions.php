@@ -32,18 +32,18 @@ function new_user()
 function get_user()
 {
     $opr = new DBOperation();
-    $result = $opr->getAllRecord("users");
+    $result = $opr->getAllRecord("post");
     if($result != "NO_DATA")
     {
-        foreach ($result as $user) {
+        foreach ($result as $post) {
             // $uty;
             echo"
             <tr>
-                <td>".$user['id']."</td>
-                <td>".$user['name']."</td>
-                <td>".$user['email']."</td>
-                <td> ".$user['phone']."</td>
-                <td>".$opr->singlerecord("utypes", $user['user_type'], "id")['name']."</td>
+                <td>".$post['id']."</td>
+                <td>".$post['title']."</td>
+                <td>".$post['content']."</td>
+                <td>".$post['status']."</td>
+                <td> ".$post['date_added']."</td>
             </tr>
             ";
         }
