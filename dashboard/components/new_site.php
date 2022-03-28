@@ -32,7 +32,7 @@ textarea{
 <!-- general form elements -->
 <div class="box box-primary">
   <!-- form start -->
-  <form role="form" method="POST" autocomplete="off">
+  <form role="form" method="POST" autocomplete="off" enctype="multipart/form-data">
     <div class="box-head">
     <?php new_site(); ?>
     </div>
