@@ -169,7 +169,7 @@ class DBOperation
 		}
 	}
 	// Sites
-	public function newSite($uid, $name, $location, $about, $date, $img)
+	public function newSite($uid, $name, $location, $about, $date, $img = null)
 	{
 		$pre_stmt = $this->con->prepare("INSERT INTO `site`(`name`, `location`, `about`, `date`, `img`, `uid`) VALUES (?, ?, ?, ?, ?, ?)");
 		$date = date("y-m-d h:i:s");
