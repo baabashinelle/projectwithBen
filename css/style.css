@@ -6618,3 +6618,7 @@ footer .item .copy-right p a {
 .signin-row, .signin-row img{
   height: 100vh;
 }
+.fc {
+  width: 55%;
+  background-color: transparent;
+}
