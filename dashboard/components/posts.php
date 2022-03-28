@@ -10,6 +10,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
+                  <th>Attachment</th>
                   <th>Title</th>
                   <th>Content</th>
                   <th>Status</th>
@@ -17,11 +18,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php get_posts(); ?>
+                <?php get_posts(); activate_post(); ?>
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>ID</th>
+                  <th>Attachment</th>
                   <th>Title</th>
                   <th>Content</th>
                   <th>Status</th>
