@@ -1,51 +1,4 @@
-/*-----------------------------------------------------------------------------------
 
-    Theme Name: Rixrod Inc
-    Description: Lo_ne.r Photography
-    Author: UI-ThemeZ
-    Author URI: https://www.rixrod.com
-  
-
------------------------------------------------------------------------------------*/
-/* ----------------------------------------------------------------
-
-== Table Of Content
-
-    |--- BASE
-
-        |- typography
-        |- helper classes
-
-    |--- SHORTCODES
-
-        |- extra
-        |- overlay
-        |- section-heading
-        |- buttons
-        |- navbar
-        |- sliders
-        |- intro
-        |- feature-box
-        |- clients
-        |- counter
-        |- portfolio
-        |- process
-        |- progress-bar
-        |- tabs
-        |- team
-        |- testimonials
-        |- blog
-        |- contact-form
-        |- footers
-
-    |--- BASE
-
-        |- responsive
-	
-
-
----------------------------------------------------------------- */
-/* ====================== [ Start Typography  ] ====================== */
 * {
   margin: 0;
   padding: 0;
@@ -8659,12 +8612,7 @@ footer .item .copy-right p a {
   .blog-pg.blog-list .item .cont {
     padding-left: 15px;
   }
-  .blog-pg.single .post .author .author-img,
-  .blog-pg.single .post .author .info,
-  .blog-pg.single .comments-area .item .comment-img,
-  .blog-pg.single .comments-area .item .info {
-    display: block;
-  }
+
   .blog-pg.single .post .author .info,
   .blog-pg.single .comments-area .item .info {
     padding-left: 0;
