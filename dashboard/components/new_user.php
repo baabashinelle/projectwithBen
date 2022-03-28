@@ -1,5 +1,6 @@
-<section class="content">
-<div class="col-md-6">
+<section class="row content">
+  <div class="col-md-2"></div>
+<div class="col-md-8">
 <!-- general form elements -->
 <div class="box box-primary">
   <!-- form start -->
@@ -53,6 +54,6 @@
   </form>
 </div>
 <!-- /.box -->
-
+<div class="col-md-2"></div>
 </div>
 </section>
