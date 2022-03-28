@@ -28,6 +28,43 @@ function new_user()
 
     }
 }
+function new_post()
+{
+    if(isset($_POST['btn_add_post']))
+    {      
+        // echo "$_FILE"
+        $opr = new DBOperation();
+        $title = strip_tags(htmlspecialchars($_POST['title']));
+        $content = strip_tags(htmlspecialchars($_POST['content']));
+        $uid = isset($_SESSION['cur_user_id']) ? $_SESSION['cur_user_id'] : 1;
+        $formError = true;
+        $file_status =  upload_image("post_img", 'posts');
+        if($file_status == "OK")
+        {
+            $file = htmlspecialchars( basename( $_FILES["post_img"]["name"]));
+            $result = $opr->createPost($uid, $title, $content, $file);
+            if($result == "POST_ADDED_SUCCESSFULLY")
+            {
+                $msg = "Post <i><b>'$title'</b></i> added successfuly.";
+                $formError = false;
+            }elseif ($result == "POST_ADDED_SUCCESSFULLY") {
+                $msg = "Post with title <i><b>'$title'</b></i> is already in our records.";
+                $formError = true;
+            }else{
+                $msg = "Unknown error occured, Please try again later.";
+                $formError = true;
+            }
+        }else{
+            $msg = $file_status;
+            $result = "FILE UPLOAD ERROR";
+            $formError = true; 
+        }
+
+        echo alert_box($formError, $msg, $result);
+
+    }
+}
+
 function new_site()
 {
     if(isset($_POST['btn_add_site']))
@@ -49,7 +86,7 @@ function new_site()
             {
                 $msg = "Site <i><b>'$name'</b></i> added successfuly.";
                 $formError = false;
-            }elseif ($result == "USER_ALREADY_EXIST") {
+            }elseif ($result == "SITE_ALREADY_EXIST") {
                 $msg = "Site with name <i><b>'$name'</b></i> is already in our records.";
                 $formError = true;
             }else{
@@ -67,9 +104,9 @@ function new_site()
     }
 }
 
-function upload_image($file)
+function upload_image($file, $dir = 'sites')
 {
-    $target_dir = "./uploads/";
+    $target_dir = "./uploads/$dir/";
     $target_file = $target_dir . basename($_FILES[$file]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -154,7 +191,7 @@ function get_sites()
             echo"
             <tr>
                 <td>".$site['id']."</td>
-                <td><img src = './uploads/".$site['img']."' width = '60' alt = '".$site['id']."' /></td>
+                <td><img src = './uploads/sites/".$site['img']."' width = '60' alt = '".$site['id']."' /></td>
                 <td>".$site['name']."</td>
                 <td>".$site['location']."</td>
                 <td>".$site['about']."</td>
@@ -171,6 +208,17 @@ function get_sites()
     }
 
 }
+
+function get_btn($st, $id)
+{
+    echo "
+    <form method = 'post' class='btn-group'>
+    <input type = 'hidden' name = 'id' value = '$id' />
+    <!-- <input type = 'hidden' name = 'status' value = '$st' /> -->
+    <button type='submit' name = 'activate_post_btn' class='btn btn-"; echo $st == 0? "danger":"success"; echo "'>"; echo $st == 0? "Approve":"Approved"; echo "</button>
+  </form>
+    ";
+}
 function get_posts()
 {
 
@@ -183,9 +231,10 @@ function get_posts()
             echo"
             <tr>
                 <td>".$post['id']."</td>
+                <td><img src = './uploads/posts/".$post['img']."' width = '60' alt = '".$post['id']."' /></td>
                 <td>".$post['title']."</td>
-                <td>".$post['content']."</td>
-                <td>".$post['status']."</td>
+                <td>".html_entity_decode($post['content'])."</td>
+                <td style = 'width: 100px;'>";echo get_btn($post['status'], $post['id']); echo"</td>
                 <td> ".$post['date_added']."</td>
             </tr>
             ";
@@ -199,6 +248,7 @@ function get_posts()
     }
 
 }
+
 function alert_box($isError, $msg, $title_msg = null)
 {
     
@@ -224,6 +274,25 @@ function alert_box($isError, $msg, $title_msg = null)
         </div>
     </div>
     ";
+}
+
+function activate_post()
+{
+    if(isset($_POST['activate_post_btn']))
+    {
+        // $status = $_POST['status'];
+        
+        $id = $_POST['id'];
+        $tb = "post";
+        $opr = new DBOperation();
+        $res = $opr->activate($tb, $id);
+        // echo "<script>alert('$res')</script>"; exit();
+        if($res == "TOGGLED_SUCCESSFULLY")
+        {
+            echo "<meta http-equiv='refresh' content='0'>";
+        }
+
+    }
 }
 function page_nav($title)
 {
