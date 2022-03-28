@@ -10,6 +10,7 @@
                 <thead>
                 <tr>
                   <th>ID</th>
+                  <th>PHOTO</th>
                   <th>Name</th>
                   <th>Location</th>
                   <th>About</th>
@@ -22,6 +23,7 @@
                 <tfoot>
                 <tr>
                   <th>ID</th>
+                  <th>PHOTO</th>
                   <th>Name</th>
                   <th>Location</th>
                   <th>About</th>
