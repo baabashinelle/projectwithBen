@@ -3622,148 +3622,6 @@ span:hover {
   z-index: 99999;
 }
 
-/* ====================== [ end showcase ] ====================== */
-/* ====================== [ Start Intro ] ====================== */
-.about .content .co-tit {
-  font-weight: 400;
-  margin-bottom: 30px;
-}
-
-.about .img-mons .img1,
-.about .img-mons .img2,
-.about .img-mons .img3 {
-  height: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.about .img-mons .img1 img,
-.about .img-mons .img2 img,
-.about .img-mons .img3 img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center center;
-  object-position: center center;
-}
-
-.about .img-mons .img2 {
-  height: 240px;
-}
-
-.about .img-mons .img3 {
-  width: 75%;
-  margin-top: 20px;
-}
-
-.about .img-mons .img3.exp {
-  background: #18191d;
-  padding: 30px;
-}
-
-.about .img-mons .img3.exp h2 {
-  font-weight: 800;
-  margin-bottom: 5px;
-}
-
-.about .img-mons .img3.exp h6 {
-  letter-spacing: 2px;
-}
-
-.about .blc-img .bimg {
-  padding-right: 80px;
-  padding-bottom: 80px;
-  position: relative;
-}
-
-.about .blc-img .bimg img {
-  border-radius: 15px;
-  overflow: hidden;
-  -webkit-box-shadow: 0px 10px 30px rgba(100, 100, 100, 0.3);
-  box-shadow: 0px 10px 30px rgba(100, 100, 100, 0.3);
-}
-
-.about .blc-img .bimg .bg-img {
-  position: absolute;
-  right: 0px;
-  bottom: 0;
-  width: 300px;
-  height: 300px;
-  -webkit-box-shadow: 0px 10px 30px rgba(100, 100, 100, 0.3);
-  box-shadow: 0px 10px 30px rgba(100, 100, 100, 0.3);
-  background-position: center center;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.about .blc-img .skills-circle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: #11141b;
-  padding: 30px;
-  border-radius: 15px;
-  position: relative;
-  margin-top: -80px;
-  right: -50px;
-  -webkit-box-shadow: 0px 10px 20px -5px rgba(52, 60, 70, 0.1);
-  box-shadow: 0px 10px 20px -5px rgba(52, 60, 70, 0.1);
-}
-
-.about .blc-img .skills-circle .item:last-of-type {
-  margin-left: 30px;
-}
-
-.about .ftbox ul {
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.about .ftbox ul li {
-  width: 100%;
-  padding: 35px 25px;
-  text-align: center;
-  background: #18191d;
-  border-radius: 5px;
-  position: relative;
-}
-
-.about .ftbox ul li.space {
-  margin: 0 10px;
-}
-
-.about .ftbox ul li .icon {
-  color: #12c2e9;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.about .ftbox ul li h6 {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.about .ftbox ul li .dots span {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #eee;
-  position: absolute;
-  right: 10px;
-  bottom: 12px;
-  opacity: 0.1;
-}
-
-.about .ftbox ul li .dots span:first-of-type {
-  bottom: 18px;
-}
-
-.about .ftbox ul li .dots span:last-of-type {
-  right: 16px;
-}
 
 .agency .content h4 {
   font-weight: 700;
@@ -3944,196 +3802,6 @@ span:hover {
   font-weight: 700;
 }
 
-.about-us .img {
-  padding-left: 150px;
-  padding-right: 50px;
-  position: relative;
-}
-
-.about-us .img:before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: 0;
-  width: 400px;
-  height: 400px;
-  background-image: url(../img/dots.png);
-  background-repeat: repeat;
-  opacity: 0.3;
-  z-index: -1;
-}
-
-.about-us .img .stauts {
-  position: absolute;
-  bottom: 50px;
-  left: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.about-us .img .stauts .item {
-  padding: 30px 20px;
-  background: #272727;
-  margin-right: 50px;
-  position: relative;
-}
-
-.about-us .img .stauts .item:after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.about-us .img .stauts .item:first-of-type {
-  background: #fff;
-  color: #121a21;
-}
-
-.about-us .img .stauts .item h4 {
-  font-size: 45px;
-  font-weight: 800;
-  display: table-cell;
-  vertical-align: middle;
-  padding-right: 20px;
-}
-
-.about-us .img .stauts .item h4 span {
-  font-size: 30px;
-  font-weight: 500;
-  margin-left: 5px;
-}
-
-.about-us .img .stauts .item h6 {
-  font-size: 15px;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.about-cr .img img {
-  width: 105%;
-  margin-left: -5%;
-}
-
-.about-cr .cont {
-  padding-left: 50px;
-}
-
-.about-cr .cont h3 {
-  font-size: 60px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  margin-left: -120px;
-}
-
-.about-cr .cont h6 {
-  font-size: 30px;
-  font-weight: 200;
-  font-style: italic;
-  margin-bottom: 40px;
-}
-
-.about-cr .cont .vid-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.about-cr .cont .vid-area .vid-icon {
-  padding-right: 30px;
-}
-
-.about-cr .cont .vid-area .vid-icon .vid-butn {
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  text-align: center;
-  font-size: 20px;
-  border-radius: 50%;
-  position: relative;
-  z-index: 2;
-}
-
-.about-cr .cont .vid-area .vid-icon .vid-butn:after {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  right: 1px;
-  bottom: 1px;
-  border-radius: 50%;
-  background: #111215;
-  z-index: -1;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.about-cr .cont .vid-area .vid-icon .vid-butn:hover:after {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-.about-cr .cont .vid-area .text {
-  font-size: 13px;
-}
-
-.about-cr .cont .states {
-  margin-top: 50px;
-}
-
-.about-cr .cont .states p {
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-.about-ar .img {
-  position: relative;
-}
-
-.about-ar .img .hero-bg {
-  width: 420px;
-  height: 420px;
-}
-
-.about-ar .img .exp {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 360px;
-  height: 360px;
-  background: rgba(35, 35, 35, 0.9);
-}
-
-.about-ar .img .exp h2 {
-  font-size: 150px;
-  font-weight: 700;
-  text-align: center;
-  margin: auto;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #c5a47e;
-  line-height: 1;
-}
-
-.about-ar .img .exp p {
-  color: #c5a47e;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.about-ar .content h3 {
-  font-size: 55px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
 
 .hero-sec .skills-box {
   padding-left: 30px;
@@ -6486,16 +6154,7 @@ footer .item .copy-right p a {
   .agency .imgsec {
     padding-right: 0;
   }
-  .about-cr .img img {
-    width: 100%;
-    margin: 0;
-  }
-  .about-cr .cont h3 {
-    margin-left: 0;
-  }
-  .about-cr .cont {
-    padding-bottom: 120px;
-  }
+  
   .testimonials .item {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6509,9 +6168,9 @@ footer .item .copy-right p a {
     display: none;
   }
   .block-sec .vid-area .cont,
-  .about .content,
+   .content,
   .skills-box,
-  .about-ar .img .hero-bg {
+  .img .hero-bg {
     margin-bottom: 50px;
   }
   .min-area .content,
@@ -6773,39 +6432,7 @@ footer .item .copy-right p a {
   .agency .imgsec .exp {
     margin-bottom: 15px;
   }
-  .about .img-mons .img1,
-  .about .img-mons .img2,
-  .about .img-mons .img3 {
-    height: auto;
-  }
-  .about .img-mons .img1,
-  .about .img-mons .img2,
-  .about .img-mons .img3 {
-    margin-bottom: 10px;
-  }
-  .about .img-mons .img3 {
-    width: 100%;
-    margin-top: 0;
-  }
-  .about-us .img .stauts .item {
-    padding: 25px 15px;
-    margin-right: 20px;
-  }
-  .about-us .img .stauts .item:last-of-type {
-    margin-right: 0;
-  }
-  .about-us .img .stauts .item h4 {
-    font-size: 30px;
-  }
-  .about-us .img .stauts .item h4 span {
-    font-size: 20px;
-  }
-  .about-us .img {
-    padding: 0;
-  }
-  .about-cr .cont h3 {
-    font-size: 40px;
-  }
+  
   .services .step-item {
     padding: 60px 40px;
   }
@@ -6917,23 +6544,6 @@ footer .item .copy-right p a {
   }
   .sec-head h2 {
     font-size: 55px;
-  }
-  .about-us .img .stauts {
-    display: none;
-  }
-  .about-ar .img .hero-bg {
-    width: 300px;
-    height: 300px;
-  }
-  .about-ar .img .exp {
-    width: 240px;
-    height: 240px;
-  }
-  .about-ar .img .exp h2 {
-    font-size: 100px;
-  }
-  .about-ar .content h3 {
-    font-size: 35px;
   }
   .services.lficon .item-box {
     display: block;
