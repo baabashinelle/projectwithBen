@@ -28,6 +28,34 @@ function new_user()
 
     }
 }
+function new_site()
+{
+    if(isset($_POST['btn_add_site']))
+    {      
+        exit("<script>alert('Hello')</script>");  
+        $opr = new DBOperation();
+        $name = strip_tags(htmlspecialchars($_POST['name']));
+        $location = strip_tags(htmlspecialchars($_POST['location']));
+        $about = strip_tags(htmlspecialchars($_POST['about']));
+        $uid = isset($_SESSION['cur_user_id']) ? $_SESSION['cur_user_id'] : 1;
+        $formError = true;
+        $date = date("y-m-d h:i:s");
+        $result = $opr->newSite($uid, $name, $location, $about, $date );
+        if($result == "SITE_ADDED_SUCCESSFULLY")
+        {
+            $msg = "Site <i><b>'$name'</b></i> added successfuly.";
+            $formError = false;
+        }elseif ($result == "USER_ALREADY_EXIST") {
+            $msg = "Site with name <i><b>'$name'</b></i> is already in our records.";
+            $formError = true;
+        }else{
+            $msg = "Unknown error occured, Please try again later.";
+            $formError = true;
+        }
+        echo alert_box($formError, $msg, $result);
+
+    }
+}
 
 function get_user()
 {
