@@ -156,11 +156,11 @@ class DBOperation
 	}
 
 	// POSTS
-	public function createPost($uid, $title, $content, $attachments)
+	public function createPost($uid, $title, $content, $img)
 	{
-		$pre_stmt = $this->con->prepare("INSERT INTO `post`(`uid`, `title`, `content`, `attachments`, `date_added`) VALUES (?, ?, ?, ?, ?)");
+		$pre_stmt = $this->con->prepare("INSERT INTO `post`(`uid`, `title`, `content`, `img`, `date_added`) VALUES (?, ?, ?, ?, ?)");
 		$date = date("y-m-d h:i:s");
-		$pre_stmt->bind_param("issss",$uid,$title,$content, $attachments, $date);
+		$pre_stmt->bind_param("issss",$uid,$title,$content, $img, $date);
 		$result = $pre_stmt->execute() or die($this->con->error);
 		if ($result) {
 			return "POST_ADDED_SUCCESSFULLY";
@@ -191,6 +191,21 @@ class DBOperation
 			return "COMMENT_ADDED_SUCCESSFULLY";
 		}else{
 			return "COMMENT_ADDITION_FAILED";
+		}
+	}
+
+	public function activate($tb, $id)
+	{
+
+		$status = $this->singlerecord($tb, $id)['status'] == "0"? "1":"0";
+		$pre_stmt = $this->con->prepare("UPDATE `$tb` SET `status` = ? WHERE `id` = ?");
+		// $status == 0? 1:0;
+		$pre_stmt->bind_param("si",$status, $id);
+		$result = $pre_stmt->execute() or die($this->con->error);
+		if ($result) {
+			return "TOGGLED_SUCCESSFULLY";
+		}else{
+			return "TOGGLE_FAILED";
 		}
 	}
 }
