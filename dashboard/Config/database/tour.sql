@@ -104,12 +104,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `user_type`, `password`, `token`, `date_added`) VALUES
-(1, 'benr', 'b@gmail.com', '123456789', 1, 'afsdgvsfbs', 'YkBnbWFpbC5jb20=', '2022-03-26'),
-(4, 'John Boadu', 'doe@gmsil.com', '123455', 1, '12345', 'ZG9lQGdtc2lsLmNvbQ==', '2022-03-26'),
-(5, 'Peter Amewu', 'peter@gmail.com', '1234567890', 2, '12345', 'cGV0ZXJAZ21haWwuY29t', '2022-03-26'),
-(6, 'john Doe', 'wwewterytr@ppt.com', '13234447879768', 3, '12345', 'd3dld3Rlcnl0ckBwcHQuY29t', '2022-03-26'),
-(7, 'John Doe', 'doej@gmail.com', '+1 445443356', 3, '12345', 'ZG9lakBnbWFpbC5jb20=', '2022-03-26'),
-(8, 'john ', 'jj@yahoo.com', '1234567890', 2, '12345', 'ampAeWFob28uY29t', '2022-03-26');
+(1, 'Dave Admin', 'dave@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 2, 'afsdgvsfbs', 'YkBnbWFpbC5jb20=', '2022-03-26')
+
 
 -- --------------------------------------------------------
 
@@ -128,8 +124,8 @@ CREATE TABLE `utypes` (
 --
 
 INSERT INTO `utypes` (`id`, `name`, `date_added`) VALUES
-(1, 'user', '0000-00-00'),
-(2, 'admin', '0000-00-00'),
+(1, 'Guest', '2022-03-26'),
+(2, 'admin', '2022-03-26'),
 (3, 'Writer', '2022-03-26');
 
 --
