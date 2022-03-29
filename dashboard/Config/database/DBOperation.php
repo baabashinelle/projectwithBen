@@ -73,6 +73,21 @@ class DBOperation
 		$result = $pre_stmt->get_result();
 		return $result->num_rows;
 	}
+
+	public function changePassword($uid, $newP, $curp)
+	{
+		$inP = $this->singlerecord("users", $uid)['password'];
+		if(md5($curp) === $inP)
+		{
+			$password = md5($newP);
+			$pre_stmt = $this->con->prepare("UPDATE users SET password = ? WHERE id = ?");
+			$pre_stmt->bind_param("si", $password, $uid);
+			$pre_stmt->execute() or die($this->con->error);
+			return "SUCCESS";
+		}else{
+			return "INVALID_CURRENT_PASSWORD";
+		}
+	}
 	public function singlerecord($tb, $val, $key="id")
 	{
 		$stmt = "SELECT * FROM  `$tb` WHERE $key = ? LIMIT 1";
