@@ -58,7 +58,7 @@
       <div class="col no-padding">
         <img src="./img/p2.jpg" alt="" />
       </div>
-      <div class="col px-5">
+      <div class="col no-padding">
       <?php
         if(isset($_GET['new-user']))
         {
