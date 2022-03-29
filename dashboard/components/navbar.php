@@ -1,3 +1,10 @@
+<?php 
+  $user_id = $_SESSION["cur_user_id"];
+  $opr = new DBOperation();
+  $user = $opr->singlerecord("users", $user_id);
+
+?>
+
 <header class="main-header">
     <!-- Logo -->
     <a href="index.php" class="logo">
@@ -34,7 +41,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $user['name'];  ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -42,18 +49,15 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                <?php echo $user['name'];  ?>
+                  <small>Member since <?php echo $user['date_added'];  ?></small>
                 </p>
               </li>
 
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="?logout=true" class="btn btn-default btn-flat">Sign out</a>
+                <div class="">
+                  <a href="?logout=true" class="btn btn-danger btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
