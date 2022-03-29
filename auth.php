@@ -1,3 +1,8 @@
+<?php 
+  require_once "./dashboard/Config/database/DBOperation.php";
+  require_once "./dashboard/components/functions.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,15 +48,15 @@
   <body>
     <!-- ==================== Start Loading ==================== -->
 
-    <div class="loading">
+    <!-- <div class="loading">
       <span>Tour with Dave</span>
-    </div>
+    </div> -->
 
-    <div id="preloader"></div>
+    <!-- <div id="preloader"></div> -->
     <!-- Sign In page -->
     <div class="row signin-row">
       <div class="col no-padding">
-        <img src="/img/p2.jpg" alt="" />
+        <img src="./img/p2.jpg" alt="" />
       </div>
       <div class="col px-5">
       <?php
