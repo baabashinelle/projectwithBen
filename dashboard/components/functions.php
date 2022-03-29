@@ -58,7 +58,15 @@ function login()
             </div>
             ";
         }elseif ($result == "PASSWORD_NOT_MATCHED"){
-            $msg = "Invalide email or password";
+            $msg = "Invalid email or password";
+            echo  "
+             <div class='alert alert-danger alert-dismissible'>
+                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                 <strong>Auth Error</strong><br /> $msg.
+             </div>
+             ";
+        }elseif ($result == "INALID_USER_TYPE"){
+            $msg = "Selected user type is not valid for this account";
             echo  "
              <div class='alert alert-danger alert-dismissible'>
                  <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -67,6 +75,7 @@ function login()
              ";
         }else{
             session_start();
+            $_SESSION["cur_user_id"] = $result; 
             $_SESSION['logedIn'] = session_id();
             redirect("dashboard/index.php");
         }
