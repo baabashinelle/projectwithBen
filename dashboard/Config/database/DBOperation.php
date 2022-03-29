@@ -119,9 +119,12 @@ class DBOperation
 			{
 				if($row["password"] == md5($password))
 				{
-						$_SESSION["cur_user_id"] = $row['id']; 
-						$_SESSION['user'] = $row['user_type'] == 1? 'user':'admin';
-						return "LOGIN_SUCCESSFULL";
+						// if (session_status() === PHP_SESSION_NONE) {
+						// 	session_start();
+						// }
+						// $_SESSION["cur_user_id"] = $row['id']; 
+						// $_SESSION['user'] = $row['user_type'] == 1? 'user':'admin';
+						return $row['id'];
 	
 				}else
 				{
