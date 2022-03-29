@@ -104,7 +104,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `user_type`, `password`, `token`, `date_added`) VALUES
-(1, 'Dave Admin', 'dave@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 2, 'afsdgvsfbs', 'YkBnbWFpbC5jb20=', '2022-03-26')
+(1, 'Dave Admin', 'dave@gmail.com', '1234567890', 2, '827ccb0eea8a706c4c34a16891f84e7b', 'YkBnbWFpbC5jb20=', '2022-03-26')
 
 
 -- --------------------------------------------------------
