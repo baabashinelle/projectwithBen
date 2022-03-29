@@ -42,4 +42,5 @@
 <?php   
   require_once "./components/functions.php";  
   require_once "./Config/database/DBOperation.php";
+  logout();
 ?>
