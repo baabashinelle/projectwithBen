@@ -6,7 +6,7 @@
   <!-- form start -->
   <form role="form" method="POST" autocomplete="off">
     <div class="box-head">
-    <?php new_user("admin"); ?>
+    <?php changePassword(); ?>
     </div>
     <div class="box-body">
       <div class="form-group">

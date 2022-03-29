@@ -36,6 +36,38 @@ function new_user($loc = 'admin')
     }
 }
 
+function changePassword()
+{
+    if(isset($_POST['btn_cp']))
+    {        
+        $opr = new DBOperation();
+        // session_start();
+        $curp = strip_tags(htmlspecialchars($_POST['curp']));
+        $newp = strip_tags(htmlspecialchars($_POST['newp']));
+        $conp = strip_tags(htmlspecialchars($_POST['conp']));
+        // echo $_SESSION['cur_user_id'];
+        // exit();
+        if($conp === $newp)
+        {
+            $result = $opr->changePassword($_SESSION['cur_user_id'], $newp, $curp);
+            // echo $result;
+            // exit();
+            if($result == "INVALID_CURRENT_PASSWORD")
+            {
+                $msg = "Incoorect password!";
+                echo alert_box(true, $msg, $result);
+            }else{
+                $msg = "Password changes successfully";
+                echo alert_box(false, $msg);
+                
+            }
+        }else{
+            echo alert_box(true, "Password do not match", "PASSWORD_MATCH_ERROR");
+
+        }
+    } 
+}
+
 function login()
 {
     if(isset($_POST['btn_login']))
