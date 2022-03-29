@@ -1,6 +1,7 @@
 <?php 
   require_once "./components/functions.php";
-  require_once "./components/head.php" 
+  require_once "./components/head.php" ;
+  session_start();
 
 ?>
 
