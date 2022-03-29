@@ -1,5 +1,10 @@
 <?php 
-  require_once "./components/head.php" 
+
+  require_once "./components/head.php" ;
+  session_start();
+  if(!isset($_SESSION['logedIn'])){
+      redirect("../auth.php");
+  }
 ?>
 
 <?php require_once "./components/navbar.php" ?>
