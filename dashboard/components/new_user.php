@@ -6,7 +6,7 @@
   <!-- form start -->
   <form role="form" method="POST" autocomplete="off">
     <div class="box-head">
-    <?php new_user(); ?>
+    <?php new_user("admin"); ?>
     </div>
     <div class="box-body">
       <div class="form-group">
@@ -33,7 +33,7 @@
       <div class="form-group" style="display: flex; justify-content: space-evenly; align-items:center ">
             <label>
                 <input type="radio" name="user_type" class="flat-red" value="1" checked required>
-                User
+                Guest
             </label>
             <label>
                 <input type="radio" name="user_type" class="flat-red" value="3" required>

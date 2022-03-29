@@ -91,6 +91,7 @@ class DBOperation
 			$pre_stmt = $this->con->prepare("INSERT INTO `users`(`name`, `phone`, `email`, `password`, `user_type`, `date_added`, `token`)VALUES (?,?,?,?,?,?,?)");
 			$date = date("y-m-d");
 			$token = base64_encode($email);
+			$password = md5($password);
 			$pre_stmt->bind_param("ssssiss",$name,$phone,$email, $password, $utype, $date, $token);
 			$result = $pre_stmt->execute() or die($this->con->error);
 			if ($result) {
@@ -102,32 +103,33 @@ class DBOperation
 			return "USER_ALREADY_EXIST";	
 		}
 	}
-	public function Login($email,$password, $table = "users")
+	public function Login($email, $user_type, $password, $table = "users")
 	{
 		$pre_stmt = $this->con->prepare("SELECT * FROM $table WHERE email = ?");
 		$pre_stmt->bind_param("s",$email);
 		$pre_stmt->execute() or die($this->con->error);
 		$result = $pre_stmt->get_result();
-		if ($result->num_rows < 1)
+		if ($result->num_rows !== 1)
 		{
 			return "USER_NOT_REGISTERED";
 		}else
 		{
 			$row = $result->fetch_assoc();
-			if($row["password"] == md5($password))
+			if($row['user_type'] == $user_type)
 			{
-					$_SESSION["name"]; 
-					$_SESSION['user'] = $row['user_type'] == 1? 'user':'admin';
-					echo "<pre>";
-					$_SESSION["phone"] = "+233 ".$row["phone"];
-					echo "Logged in as". $_SESSION['user'] ."<br><br>";
-					echo "Full Name: ".$_SESSION['name']."<br>";
-					echo "Phone:  ".$_SESSION['phone']."<br>";
-					return "LOGIN_SUCCESSFULL";
+				if($row["password"] == md5($password))
+				{
+						$_SESSION["cur_user_id"] = $row['id']; 
+						$_SESSION['user'] = $row['user_type'] == 1? 'user':'admin';
+						return "LOGIN_SUCCESSFULL";
+	
+				}else
+				{
+					return "PASSWORD_NOT_MATCHED";
+				}
+			}else{
+				return "INALID_USER_TYPE";
 
-			}else
-			{
-				return "PASSWORD_NOT_MATCHED";
 			}
 		}
 	}

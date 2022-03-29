@@ -44,7 +44,7 @@
     <!-- ==================== Start Loading ==================== -->
 
     <div class="loading">
-      <!-- <span>Tour with Dave</span> -->
+      <span>Tour with Dave</span>
     </div>
 
     <div id="preloader"></div>
@@ -92,7 +92,7 @@
 
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="signin.html"><i class="fa fa-user"></i></a>
+              <a class="nav-link" href="auth.php"><i class="fa fa-user"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa fa-search"></i></a>

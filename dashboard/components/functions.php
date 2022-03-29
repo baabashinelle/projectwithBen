@@ -1,7 +1,7 @@
 <?php 
 
 
-function new_user()
+function new_user($loc = 'admin')
 {
     if(isset($_POST['btn_add_user']))
     {        
@@ -9,7 +9,7 @@ function new_user()
         $name = strip_tags(htmlspecialchars($_POST['name']));
         $phone = strip_tags(htmlspecialchars($_POST['phone']));
         $email = strip_tags(htmlspecialchars($_POST['email']));
-        $password = "12345";
+        $password = isset($_POST['password'])? strip_tags(htmlspecialchars($_POST['password'])): "12345";
         $user_type = strip_tags(htmlspecialchars($_POST['user_type']));
         $formError = true;
         $result = $opr->addUser($name, $email, $phone, $password, $user_type);
@@ -24,10 +24,76 @@ function new_user()
             $msg = "Unknown error occured, Please try again later.";
             $formError = true;
         }
-        echo alert_box($formError, $msg, $result);
+        echo $loc == 'admin'? alert_box($formError, $msg, $result):
+             "
+            <div class='alert alert-";echo $formError? "danger":"success"; echo" alert-dismissible'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                <strong>$result</strong><br /> $msg.
+            </div>
+            ";
+        
 
     }
 }
+
+function login()
+{
+    if(isset($_POST['btn_login']))
+    {        
+        $opr = new DBOperation();
+
+        $email = strip_tags(htmlspecialchars($_POST['email']));
+        $password = strip_tags(htmlspecialchars($_POST['password']));
+        $user_type = strip_tags(htmlspecialchars($_POST['user_type']));
+        $result = $opr->Login($email, $user_type,  $password);
+        // echo "<script>alert('$user_type')</script>";
+        // exit();
+        if($result == "USER_NOT_REGISTERED")
+        {
+            $msg = "Account doesn't exist!";
+           echo  "
+            <div class='alert alert-danger alert-dismissible'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                <strong>$result</strong><br /> $msg.
+            </div>
+            ";
+        }elseif ($result == "PASSWORD_NOT_MATCHED"){
+            $msg = "Invalide email or password";
+            echo  "
+             <div class='alert alert-danger alert-dismissible'>
+                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                 <strong>Auth Error</strong><br /> $msg.
+             </div>
+             ";
+        }else{
+            session_start();
+            $_SESSION['logedIn'] = session_id();
+            redirect("dashboard/index.php");
+        }
+
+        
+
+    }  
+}
+
+function logout()
+{
+    if(isset($_GET['logout']) && $_GET['logout'] == true){
+        session_start();
+        ob_start();
+        session_unset();
+        session_destroy();
+        redirect("../auth.php");
+    }
+}
+
+function redirect($url) {
+    ob_start();
+    header('Location: '.$url);
+    ob_end_flush();
+    die();
+}
+
 function new_post()
 {
     if(isset($_POST['btn_add_post']))
