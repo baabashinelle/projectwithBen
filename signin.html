@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Title  -->
+    <title>Tour with Dave</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/p3.jpg" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="css/plugins.css" />
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--for fontawesome icons-->
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loading">
+      <!-- <span>Tour with Dave</span> -->
+    </div>
+
+    <div id="preloader"></div>
+    <!-- Sign In page -->
+    <div class="row signin-row">
+      <div class="col no-padding">
+        <img src="/img/p2.jpg" alt="" />
+      </div>
+      <div class="col no-padding">
+        <div class="container">
+          <h2 class="pt-5 pl-3">Sign In or Create a new account</h2>
+          <p class="pl-4">
+            If you are a returning user, please Sign in if not, create a new
+            account.
+          </p>
+
+          <form class="pt-3 pl-4 pb-4">
+            <div class="form-group">
+              <label for="email">Email address *</label>
+              <input
+                type="email"
+                class="form-control fc"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password *</label>
+              <input
+                type="password"
+                class="form-control fc"
+                id="password"
+              />
+            </div>
+            <div class="form-group">
+              <label for="select">Select User Type *</label>
+              <br>
+              <select name="select" id="select" class="form-select">
+                  <option selected>Guest</option>
+                  <option value="visitor">Visitor</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="student">Student</option>
+              </select>
+            </div>
+            <p class="pt-4 mt-4 pb-4">
+              <button type="submit" class="btn login-btn">
+                <a href="admin.html"> Login</a>
+              </button>
+            </p>
+
+            <small
+              >New User?
+              <span style="color: aqua"
+                ><a href="signup.html">Create an account</a></span
+              ></small
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="js/plugins.js"></script>
+
+    <!-- custom scripts -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
