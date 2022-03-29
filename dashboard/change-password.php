@@ -16,7 +16,7 @@
 <!-- Tabs -->
 <?php 
 
-
+  require_once "./components/cp.php"
 
 ?>
 </div>
