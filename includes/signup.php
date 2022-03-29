@@ -4,14 +4,18 @@
             Welcome! Proceed to create a new account.
           </p>
 
-          <form class="pt-3 pl-4 pb-4">
+          <form class="pt-2 pl-4 pb-2" method="post" autocomplete="off">
+            <?php new_user(''); ?>
+
               <div class="form-group">
               <label for="name">Full Name *</label>
               <input
                 type="name"
                 class="form-control fc"
                 id="name"
+                name="name"
                 aria-describedby="emailHelp"
+                required
               />
             </div>
 
@@ -21,7 +25,20 @@
                 type="email"
                 class="form-control fc"
                 id="email"
+                name="email"
                 aria-describedby="emailHelp"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input
+                type="text"
+                class="form-control fc"
+                id="phone"
+                name="phone"
+                aria-describedby="emailHelp"
+                required
               />
             </div>
             <div class="form-group">
@@ -30,20 +47,20 @@
                 type="password"
                 class="form-control fc"
                 id="password"
+                name="password"
+                required
               />
             </div>
             <div class="form-group">
               <label for="select">Select User Type *</label>
               <br>
-              <select name="select" id="select" class=" form-control">
-                  <option selected>Guest</option>
-                  <option value="visitor">Visitor</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student">Student</option>
+              <select name="user_type" id="select" class=" form-control fc" required>
+                  <option value="1" selected>Guest</option>
+                  <option value="3">Writer</option>
               </select>
             </div>
-            <p class="pt-4 mt-4 pb-4">
-              <button type="submit" name="signup_btn" class="btn login-btn">
+            <p class="pt-1 mt-1 pb-2">
+              <button type="submit" name="btn_add_user" class="btn login-btn">
               Signup
               </button>
             </p>
