@@ -5,13 +5,15 @@
             account.
           </p>
 
-          <form class="pt-3 pl-4 pb-4">
+          <form class="pt-1 pl-4 pb-2" method="post" autocomplete="off">
+          <?php login(); ?>
             <div class="form-group">
               <label for="email">Email address *</label>
               <input
                 type="email"
                 class="form-control fc"
                 id="email"
+                name="email"
                 aria-describedby="emailHelp"
               />
             </div>
@@ -21,20 +23,20 @@
                 type="password"
                 class="form-control fc"
                 id="password"
+                name="password"
               />
             </div>
             <div class="form-group">
               <label for="select">Select User Type *</label>
               <br>
-              <select name="select" id="select" class="form-control">
-                  <option selected>Guest</option>
-                  <option value="visitor">Visitor</option>
-                  <option value="teacher">Teacher</option>
-                  <option value="student">Student</option>
+              <select name="user_type" id="select" class="form-control fc">
+                  <option value="1" selected>Guest</option>
+                  <option value="3">Writer</option>
+                  <option value="2">Admin</option>
               </select>
             </div>
-            <p class="pt-4 mt-4 pb-4">
-              <button type="submit" name="login_btn" class="btn login-btn">
+            <p class="pt-1 mt-2 pb-1">
+              <button type="submit" name="btn_login" class="btn login-btn">
                 Login
               </button>
             </p>
