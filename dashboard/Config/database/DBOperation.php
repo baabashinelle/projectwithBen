@@ -116,13 +116,8 @@ class DBOperation
 			$row = $result->fetch_assoc();
 			if($row["password"] == md5($password))
 			{
-					$_SESSION["name"]; 
+					$_SESSION["cur_user_id"] = $row['id']; 
 					$_SESSION['user'] = $row['user_type'] == 1? 'user':'admin';
-					echo "<pre>";
-					$_SESSION["phone"] = "+233 ".$row["phone"];
-					echo "Logged in as". $_SESSION['user'] ."<br><br>";
-					echo "Full Name: ".$_SESSION['name']."<br>";
-					echo "Phone:  ".$_SESSION['phone']."<br>";
 					return "LOGIN_SUCCESSFULL";
 
 			}else
